@@ -69,4 +69,12 @@ function serveorder(item:ChaiOrder | string) {
         return `serving ${item.type} chai with ${ClipboardItem.sugar}
         sugar`
     }
+    return `serving custom chai : ${item}`
 }
+
+
+type MasalaChai = {type : "masala"; spicelevel:  number};
+type GingerChai= {type : "ginger"; amount: number};
+type ElaichiChai= {type : "elachi"; aroma :  number};
+
+type Chai = MasalaChai | GingerChai |ElaichiChai
