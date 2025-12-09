@@ -78,3 +78,19 @@ type GingerChai= {type : "ginger"; amount: number};
 type ElaichiChai= {type : "elachi"; aroma :  number};
 
 type Chai = MasalaChai | GingerChai |ElaichiChai
+function MakeChai(order:Chai){
+    switch (order.type) {
+        case "masala":
+            return `Masala chai`
+            
+            break;
+    
+          case "elachi":
+            return `elachi chai`
+
+            case "ginger":
+            return `ginger chai` 
+            
+            break;
+    }
+}
