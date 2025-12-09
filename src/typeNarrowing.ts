@@ -47,3 +47,26 @@ function serve(chai :  kulhadChai | Cutting){
         return chai.serve()
     }
 }
+
+
+type ChaiOrder = {
+    type : string
+    sugar : number
+}
+
+function isChaiOrder(obj:any):obj is ChaiOrder{
+    return(
+        typeof obj === "object" &&
+        obj !== null &&
+        typeof obj.type === "string" &&
+        typeof obj.sugar === "number" 
+
+    )
+}
+
+function serveorder(item:ChaiOrder | string) {
+    if(isChaiOrder(item)){
+        return `serving ${item.type} chai with ${ClipboardItem.sugar}
+        sugar`
+    }
+}
